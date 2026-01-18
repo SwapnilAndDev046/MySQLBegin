@@ -47,6 +47,11 @@ select name, department from employees
 order by field(department,'IT','HR','SDE','Marketing','Finance'); -- custom order by 
 select * from employees where soundex('sunita nair') = soundex(name); -- similar sounding
 
+USE db_inner_join; 
+select b.title, a.first_name, a.last_name, group_concat(d.category_name)  from authors a 
+inner join books b on b.author_id  = a.author_id 
+inner join book_categories c on c.book_id = b.book_id
+inner join categories d on d.category_id = c.category_id group by b.book_id;-- group concate make the things form grouping
 
 -- =================
 -- NUMERIC FUNCTIONS
