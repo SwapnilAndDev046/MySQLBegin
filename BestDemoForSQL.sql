@@ -25,6 +25,7 @@ create table employee(
     Salary decimal(10,2) check (Salary > 0), -- expression in ()
     employement_status enum('active','on leave','terminated') default 'active',
     -- best practice must have
+	-- this created_at and updated_at should be used in each table
     created_at timestamp default current_timestamp, -- this is the column in table update when something new row added 
     updated_at timestamp default current_timestamp on update current_timestamp -- this 
 
